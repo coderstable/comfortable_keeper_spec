@@ -1,0 +1,2 @@
+# comfortable_keeper_spec
+エアコン温度自動制御システムの仕様書
