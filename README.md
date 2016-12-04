@@ -12,3 +12,4 @@ RailsとArduinoを使ってエアコンのリモコンのスイッチをモー�
   
   
   
+https://www.mgo-tec.com/blog-entry-50.html
