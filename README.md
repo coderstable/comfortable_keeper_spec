@@ -8,14 +8,37 @@ RailsとArduinoを使ってエアコンのリモコンのスイッチをモー�
 
 # アプリケーション構成
  - [ウェブ側 Ruby On Rails](https://github.com/coderstable/comfortable_keeper_rails)
- - [デバイス側 :Arduino](https://github.com/coderstable/comfortable_keeper_sketch)
+ - [実機側 :Arduino](https://github.com/coderstable/comfortable_keeper_sketch)
   
-  
-  
-https://www.mgo-tec.com/blog-entry-50.html
 
 
+# ウェブアプリケーション仕様（）
+ - 環境
+  - [画面構成](https://prottapp.com/p/7c8c69)
+  - cssフレームワークは[bootstrap3](http://getbootstrap.com/)
+  - rails 5
+  - 実機からのread/writeはAPIを叩く
+ - 概念、用語
+  - ユーザ: このアプリケーションの利用者、ユーザ登録を行うことでユーザとなる
+  - デバイス: ユーザに紐付いて登録される、エアコンのアプリケーション上での論理的な単位（設定温度や、MACアドレスなどの情報をもつ）
+  - 操作ログ　デバイスに紐付き、実機がエアコンを操作したログのこと、API経由でウェブ側に送信され、デバイスに紐付き記録される
+  - 環境ログ　デバイスに紐付き、実機が観測した温度のログのこと、API経由でウェブ側に送信され、デバイスに紐付き記録される
+  
+ - ユースケース 
+  - ユーザを新規登録できる（メールアドレス、パスワード）
+  - ユーザは複数デバイスを登録できる
+  - デバイスMACアドレス、設定温度を登録できる
+  - 登録したデバイスのON/OFFが設定できる。
+  - デバイスは削除できる
+  - デバイスの操作ログ、観測温度を記録する
+ 
+# 実機側アプリケーション仕様
+ - [ESP-WROOM-02 Wi-Fiモジュール](https://www.switch-science.com/catalog/2346/)にArduinoスケッチを書き込む
+ - 実機は１分おきに温度を観測し実行するとログをサーバ（ウェブアプリ)に送信する
+ - 実機は、webから設定温度を取得し、観測温度が高ければエアコンの温度を一度さげる。実行するとログをサーバ（ウェブアプリ)に送信する
+ - 実機は、webから設定温度を取得し、観測温度が低ければエアコンの温度を一度あげる。実行するとログをサーバ（ウェブアプリ)に送信する
+ - 実機は、ウェブアプリ側のデバイスモデルと紐付けを行うための情報としてMACアドレスをユーザに表示する（シリアル通信にて）
+ 
+# めも 
+- https://www.mgo-tec.com/blog-entry-50.html
 
-# ウェブアプリケーション仕様
- - https://prottapp.com/p/7c8c69
- - dddddd
