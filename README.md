@@ -7,8 +7,8 @@ RailsとArduinoを使ってエアコンのリモコンのスイッチをモー�
 
 
 # アプリケーション構成
- - ウェブ側 Ruby On Rails(https://github.com/coderstable/comfortable_keeper_rails)
- - デバイス側 :Arduino(https://github.com/coderstable/comfortable_keeper_sketch)
+ - [ウェブ側 Ruby On Rails](https://github.com/coderstable/comfortable_keeper_rails)
+ - [デバイス側 :Arduino](https://github.com/coderstable/comfortable_keeper_sketch)
   
   
   
